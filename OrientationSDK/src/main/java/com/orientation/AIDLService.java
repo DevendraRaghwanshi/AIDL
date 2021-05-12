@@ -35,7 +35,6 @@ public class AIDLService extends Service implements SensorEventListener {
         @Override
         public void registerCallback(ICallback cb) {
             if (cb != null) {
-                // Register callback object
                 mCallbacks.register(cb);
             }
         }
@@ -43,7 +42,6 @@ public class AIDLService extends Service implements SensorEventListener {
         @Override
         public void unregisterCallback(ICallback cb) {
             if (cb != null) {
-                // Unregister
                 mCallbacks.unregister(cb);
             }
         }
@@ -95,11 +93,6 @@ public class AIDLService extends Service implements SensorEventListener {
         float roll = orientation[2] * FROM_RADS_TO_DEGS;
 
         updateCallBack(pitch, roll);
-
-//        OrienInterface orienInterface = null;
-//        orienInterface.basicTypes(pitch, roll);
-//        ((TextView)findViewById(R.id.pitch)).setText("Pitch: "+pitch);
-//        ((TextView)findViewById(R.id.roll)).setText("Roll: "+roll);
     }
 
     private void updateCallBack(float pitch, float roll) {

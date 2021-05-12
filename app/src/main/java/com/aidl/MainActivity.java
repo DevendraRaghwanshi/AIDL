@@ -68,11 +68,8 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
 
         @Override
         public void showResult(float pitch, float roll) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    textView.setText("pitch : " + pitch + "\n roll : " + roll);
-                }
+            runOnUiThread(() -> {
+                textView.setText("pitch : " + pitch + "\n roll : " + roll);
             });
         }
     };
